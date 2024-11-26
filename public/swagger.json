@@ -1,0 +1,57 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "LUKSO Block API",
+      "version": "1.0.0",
+      "description": "API for fetching block number and health status"
+    },
+    "paths": {
+      "/api/block-number": {
+        "get": {
+          "summary": "Get the latest block number",
+          "responses": {
+            "200": {
+              "description": "Block number retrieved successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "blockNumber": {
+                        "type": "integer",
+                        "description": "Latest block number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/health": {
+        "get": {
+          "summary": "Health check endpoint",
+          "responses": {
+            "200": {
+              "description": "API status is UP",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "string",
+                        "example": "UP"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
